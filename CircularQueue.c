@@ -1,8 +1,9 @@
 /******************************************************************************
 
-                            Online C Compiler.
-                Code, Compile, Run and Debug C program online.
-Write your code in this editor and press "Run" button to compile and execute it.
+                     Benjarit Cicular Queue Abstract Data Structure
+                           Opeartion 1. Enqueue O(1)
+                           Operation 2. Dequque O(1)
+                           Operation 3. Print Queue O(n)
 
 *******************************************************************************/
 
@@ -87,5 +88,5 @@ void dequeue(Queue* q)
 {
     Node* temp = q->rear->next->next;
     free(q->rear->next);
-    q->rear = temp;
+    q->rear->next = temp;
 }
