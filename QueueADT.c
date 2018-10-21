@@ -78,7 +78,7 @@ void enqueue(Queue* q, int number)
 }
 void printFrontRear(Queue* q)
 {
-    printf("\nThe is front value is %d\n", q->front->value);
+    printf("\nThe front value is %d\n", q->front->value);
     printf("The rear value is %d\n", q->rear->value);
 }
 void dequeue(Queue* q)
