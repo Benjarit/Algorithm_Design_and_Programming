@@ -83,6 +83,7 @@ void printFrontRear(Queue* q)
 }
 void dequeue(Queue* q)
 {
+    Node* temp = q->front->next;
     free(q->front);
-    q->front = q->front->next;
+    q->front = temp;
 }
