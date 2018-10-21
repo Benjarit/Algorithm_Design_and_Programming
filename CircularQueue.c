@@ -1,6 +1,6 @@
 /******************************************************************************
 
-                     Benjarit Cicular Queue Abstract Data Structure
+                 Benjarit Prelab for Queue Abstract Data Structure
                            Opeartion 1. Enqueue O(1)
                            Operation 2. Dequque O(1)
                            Operation 3. Print Queue O(n)
@@ -16,6 +16,7 @@ typedef struct x{
 } Node;
 
 typedef struct y{
+    Node* front;
     Node* rear;
 } Queue;
 
@@ -24,11 +25,11 @@ int main()
     srand(time(NULL));
     
     Queue *q = (Queue*)malloc(sizeof(Queue));
+    q->front = NULL;
     q->rear = NULL;
     
     int counter;
     Node* temp;
-    Node* head;
     for(counter = 0; counter < 10; counter++)
     {
         temp = (Node*)malloc(sizeof(Node));
@@ -37,12 +38,11 @@ int main()
         {
             q->rear = temp;
         }
-        if( head != NULL){
-          temp->next = head; 
+        if( q->front != NULL){
+          temp->next = q->front; 
         }
-        head = temp;
+        q->front = temp;
     }
-    q->rear->next = head;
     
     printQueue(q);
     
@@ -59,14 +59,13 @@ int main()
 }
 void printQueue(Queue* q)
 {
-    Node* temp2 = q->rear->next;
+    Node* temp2 = q->front;
     printf("--------------------------------------------\n");
-    while(temp2 != q->rear)
+    while(temp2 != NULL)
     {
         printf("%d ", temp2->value);
         temp2 = temp2->next;
     }
-    printf("%d ", temp2->value);
     printf("\n--------------------------------------------");
     printFrontRear(q);
 }
@@ -74,19 +73,17 @@ void enqueue(Queue* q, int number)
 {
     Node* temp = (Node*) malloc(sizeof(Node));
     temp->value = number;
-    Node* tempHead = q->rear->next;
     q->rear->next = temp;
     q->rear = temp;
-    q->rear->next = tempHead;
 }
 void printFrontRear(Queue* q)
 {
-    printf("\nThe front value is %d\n", q->rear->next->value);
+    printf("\nThe front value is %d\n", q->front->value);
     printf("The rear value is %d\n", q->rear->value);
 }
 void dequeue(Queue* q)
 {
-    Node* temp = q->rear->next->next;
-    free(q->rear->next);
-    q->rear->next = temp;
+    Node* temp = q->front->next;
+    free(q->front);
+    q->front = temp;
 }
