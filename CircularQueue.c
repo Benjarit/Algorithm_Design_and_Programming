@@ -70,6 +70,11 @@ void printQueue(Queue* q)
     printf("\n--------------------------------------------");
     printFrontRear(q);
 }
+void printFrontRear(Queue* q)
+{
+    printf("\nThe front value is %d\n", q->rear->next->value);
+    printf("The rear value is %d\n", q->rear->value);
+}
 void enqueue(Queue* q, int number)
 {
     Node* temp = (Node*) malloc(sizeof(Node));
@@ -78,11 +83,6 @@ void enqueue(Queue* q, int number)
     q->rear->next = temp;
     q->rear = temp;
     q->rear->next = tempHead;
-}
-void printFrontRear(Queue* q)
-{
-    printf("\nThe front value is %d\n", q->rear->next->value);
-    printf("The rear value is %d\n", q->rear->value);
 }
 void dequeue(Queue* q)
 {
