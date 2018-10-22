@@ -1,8 +1,9 @@
 /******************************************************************************
 
-                            Online C Compiler.
-                Code, Compile, Run and Debug C program online.
-Write your code in this editor and press "Run" button to compile and execute it.
+                 Benjarit Prelab for Circular Queue Abstract Data Structure
+                           Opeartion 1. Enqueue O(1)
+                           Operation 2. Dequque O(1)
+                           Operation 3. Print Queue O(n)
 
 *******************************************************************************/
 
