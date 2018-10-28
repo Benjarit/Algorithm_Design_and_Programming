@@ -24,7 +24,6 @@ int main()
     while (myfile >> output) {
         string result;
         regex_replace (back_inserter(result), output.begin(), output.end(), first, "");
-        
         /* 
             If key already exists in the map, then do incrementation
             If key is not in the map, then initialize mapped value to 1
