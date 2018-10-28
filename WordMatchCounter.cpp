@@ -1,8 +1,7 @@
 /******************************************************************************
 
-                              Online C++ Compiler.
-               Code, Compile, Run and Debug C++ program online.
-Write your code in this editor and press "Run" button to compile and execute it.
+                                  Benjarit Hotra.
+              This program will find the frequency of a word in a file.
 
 *******************************************************************************/
 
@@ -21,27 +20,32 @@ int main()
     regex first ("\\[|\\]|\\.|/");
     fstream myfile;
     myfile.open ("info.in");
+    
     while (myfile >> output) {
         string result;
         regex_replace (back_inserter(result), output.begin(), output.end(), first, "");
         
-        if(freqWord[result] == 0){
-            freqWord[result] = 1;
+        /* 
+            If key already exists in the map, then do incrementation
+            If key is not in the map, then initialize mapped value to 1
+        */
+        if(freqWord.find(result) != freqWord.end()){
+            freqWord[result]++;
         }
         else{
-            freqWord[result]++;
+            freqWord[result] = 1;
         }
         cout << result << endl;
         word_count++;
     }
     
-    
+    // Printing out the result
     cout << "\n============ There are " << word_count << " words in the file.=============\n";
     cout << "Result:";
     for (auto x : freqWord){
       cout << "\n============ \"" << x.first << "\" has " << x.second << " places in the file.============="; 
     }
-      
+    
     myfile.close();
     return 0;
 }
