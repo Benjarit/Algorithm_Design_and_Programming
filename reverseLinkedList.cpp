@@ -13,7 +13,7 @@ typedef struct s
     int val; 
     struct s* next; 
     
-} 
+}
 Node; 
 void initializeList(Node** head); 
 void reverseLinkedList(Node** head); 
