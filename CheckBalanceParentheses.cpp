@@ -29,7 +29,7 @@ bool isBalancePar(string par){
         }
         return false;
     }
-    /* This will create *Short-circuit* as second condition will not be evaluated */
+    /* NOTE: This will create *Short-circuit* as second condition will not be evaluated */
     // return false && (isBalancePar(par.substr(1,par.size()-2)));
     return (par[0] == '{' && par[par.size()-1] == '}') && (isBalancePar(par.substr(1,par.size()-2)));
 }
