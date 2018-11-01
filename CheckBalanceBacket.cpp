@@ -1,7 +1,7 @@
 /******************************************************************************
 
                                    Benjarit Hotra
-      Program checks for wheater an input strign has a balance number of curry {}
+      Program checks for wheater an input string has a balance number of curry {}
 
 *******************************************************************************/
 
