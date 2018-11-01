@@ -9,19 +9,24 @@
 *******************************************************************************/
 
 #include <iostream>
-#include <cstdlib>    /* srand, rand */
-#include <ctime>
-#include <stack>
 #include <string>
+#include <regex>
 using namespace std;
 
 bool isBalancePar(string);
 int main()
 {
-    string par = "{{}}";
-    if(isBalancePar(par)){
+    string result;
+    string testString = "{sdssdff{sdfd{}fsdfd}ssdfds}";
+    regex charDel("[^{}]|");
+    
+    regex_replace(back_inserter(result), testString.begin(), testString.end(), charDel, "");
+    if(isBalancePar(result)){
         cout << "Balance!!" << endl;
+    }else{
+        cout << "Not Balance!!" << endl;
     }
+    
     return 0;
 }
 bool isBalancePar(string par){
@@ -33,7 +38,7 @@ bool isBalancePar(string par){
         }
         return false;
     }
-    /* NOTE: This will create *Short-circuit* as second condition will not be evaluated */
+    /* This will create *Short-circuit* as second condition will not be evaluated */
     // return false && (isBalancePar(par.substr(1,par.size()-2)));
     return (par[0] == '{' && par[par.size()-1] == '}') && (isBalancePar(par.substr(1,par.size()-2)));
 }
