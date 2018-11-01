@@ -18,7 +18,7 @@ int main()
 {
     string result;
     string testString = "{sdssdff{sdfd{}fsdfd}ssdfds}";
-    regex charDel("[^{}]|");
+    regex charDel("[^{}]");
     
     regex_replace(back_inserter(result), testString.begin(), testString.end(), charDel, "");
     if(isBalancePar(result)){
