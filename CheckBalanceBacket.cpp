@@ -2,6 +2,9 @@
 
                                    Benjarit Hotra
       Program checks for wheater an input string has a balance number of curry {}
+      
+                            Time complexity of the operation
+                                        O(N)
 
 *******************************************************************************/
 
