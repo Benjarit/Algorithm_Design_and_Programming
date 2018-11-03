@@ -16,6 +16,7 @@ typedef struct s2{
 
 Stack* push(Node*);
 void popAll(Stack*);
+void printList(Node* list);
 
 int main()
 {
@@ -41,13 +42,8 @@ Stack* push(Node* head){
         }
         head = temp;
         s->top = head;
-        
         // ============ print ================= //
-        Node* temp2 = head;
-        while(temp2 != NULL){
-            printf("%d ", temp2->value);
-            temp2 = temp2->next;
-        }
+        printList(head);
         printf("\n");
     }
     return s;
@@ -58,12 +54,13 @@ void popAll(Stack* stack){
         stack->top = temp3->next;
         free(temp3);// temp3 = NULL
         temp3 = stack->top;
-        
-        Node* temp4 = temp3;
-        while(temp4 != NULL){
-            printf("%d ", temp4->value);
-            temp4 = temp4->next;
-        }
+        printList(temp3);
         printf("\n");
+    }
+}
+void printList(Node* list){
+    while(list != NULL){
+        printf("%d ", list->value);
+        list = list->next;
     }
 }
