@@ -72,6 +72,7 @@ void printQueue(Queue* q)
 void enqueue(Queue* q, int number)
 {
     Node* temp = (Node*) malloc(sizeof(Node));
+    temp->next = NULL;
     temp->value = number;
     q->rear->next = temp;
     q->rear = temp;
