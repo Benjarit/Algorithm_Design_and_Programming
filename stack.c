@@ -14,31 +14,17 @@ typedef struct s2{
     struct s* top;
 }Stack;
 
-Stack* push(Node* head);
-//Stack* pop(Node* head);
+Stack* push(Node*);
+void popAll(Stack*);
 
 int main()
 {
     Node* head= NULL;
     Stack *s = NULL;
     
-    
     s = push(head);
-    Node* temp3 = s->top;
+    popAll(s);
     
-    while(temp3 != NULL){
-        s->top = temp3->next;
-        free(temp3);// temp3 = NULL
-        temp3 = s->top;
-        
-        Node* temp4 = temp3;
-        while(temp4 != NULL){
-            printf("%d ", temp4->value);
-            temp4 = temp4->next;
-        }
-        printf("\n");
-    }
-
     return 0;
 }
 Stack* push(Node* head){
@@ -65,4 +51,19 @@ Stack* push(Node* head){
         printf("\n");
     }
     return s;
+}
+void popAll(Stack* stack){
+    Node* temp3 = stack->top;
+    while(temp3 != NULL){
+        stack->top = temp3->next;
+        free(temp3);// temp3 = NULL
+        temp3 = stack->top;
+        
+        Node* temp4 = temp3;
+        while(temp4 != NULL){
+            printf("%d ", temp4->value);
+            temp4 = temp4->next;
+        }
+        printf("\n");
+    }
 }
