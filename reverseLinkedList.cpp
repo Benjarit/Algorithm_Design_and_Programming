@@ -29,7 +29,8 @@ int main() {
 } 
 void initializeList(Node** head){ 
     for(int x = 0; x < 5; x++){ 
-        Node* temp = new Node; 
+        Node* temp = new Node;
+        temp->next = NULL;
         temp->val = rand() % 10 + 1; 
         if (*head != NULL){
             temp->next = *head; 
