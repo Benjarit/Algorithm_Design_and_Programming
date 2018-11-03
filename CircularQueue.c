@@ -32,6 +32,7 @@ int main()
     for(counter = 0; counter < 10; counter++)
     {
         temp = (Node*)malloc(sizeof(Node));
+        temp->next = NULL;
         temp->value = (rand()%10 + 1);
         if(q->rear == NULL)
         {
