@@ -36,6 +36,7 @@ Stack* push(Node* head){
     
     for( x =0; x < 10; x++){
         temp = (Node*)malloc(sizeof(Node));
+        temp->next = NULL;
         temp->value = array[x];
         if(head != NULL){
             temp->next = head;
