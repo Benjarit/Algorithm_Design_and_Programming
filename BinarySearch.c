@@ -48,7 +48,7 @@ int main()
 void* binarySearch(void* arr, int first, int last, void* query){
     
     
-    if(last >= 1 && first <= 9){
+    if(last >= 0 && first <= last){
         int midIndex = first + (last - first)/2; 
         printf("The mid index is %d\n", midIndex);
         //printf("\n\nThe mid index is %d\n", midIndex);
