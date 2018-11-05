@@ -29,15 +29,15 @@ int main()
     
     int n = sizeof(arr)/ sizeof(arr[0]); 
     
-    
     Node target;
-    target.value = 11;
-    printf("\nThe target number is %d\n\n", target.value);
+    printf("\nEnter the number to be search: ");
+    scanf("%d",&(target.value));
+    printf("The target number is %d\n\n", target.value);
     
     void* result = binarySearch(arr, 0, n-1, &target); 
     
     if(result != NULL){
-        printf("\nThe result is: %d\n",((Node*)result)->value);
+        printf("\nWe found the target value in the array!\nThe result is: %d\n",((Node*)result)->value);
         printf("The result is: %p\n",((Node*)result));
     }else{
         printf("\nThe target is not in the array!!\n");
