@@ -44,8 +44,6 @@ int main()
         printf("After pop: =====================\n");
         printList(head);
     }
-    
-    
     return 0;
 }
 Node* push(int number, Node* head){
