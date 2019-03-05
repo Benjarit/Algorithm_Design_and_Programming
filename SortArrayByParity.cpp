@@ -6,8 +6,6 @@
   * You may return any answer array that satisfies this condition.
   * 
 */
-
-
 class Solution {
 public:
     vector<int> sortArrayByParity(vector<int>& A) {
@@ -22,7 +20,6 @@ public:
                result.push_back(A[x]);
             }
         }
-            
         return result;
     }
 };
